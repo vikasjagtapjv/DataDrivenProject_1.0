@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.base.BaseClass;
 
 public class LoginPom extends BaseClass {
-	
+	//Object Block created
 	{
 		PageFactory.initElements(driver,this);
 	}
