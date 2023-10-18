@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="loginTest"/>
+          <include name="testUser"/>
         </methods>
       </class> <!-- com.testclasses.LoginTest -->
     </classes>

@@ -41,10 +41,12 @@ public class LoginPom extends BaseClass {
 	}
 	public void setUserN(String name)
 	{
+		Name.clear();
 		Name.sendKeys(name);
 	}
 	public void setPass(String password)
 	{
+		Pass.clear();
 		Pass.sendKeys(password);
 	}
 	public void click()
