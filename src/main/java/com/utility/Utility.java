@@ -46,9 +46,8 @@ public class Utility extends BaseClass {
 			int cellNum=sheet.getRow(r).getLastCellNum();
 			for(int c=0;c<cellNum;c++)
 			{
-				String k=sheet.getRow(r).getCell(c).getStringCellValue();
-				String v=sheet.getRow(r).getCell(c).getStringCellValue();
-				hm.put(k,v);
+				
+				hm.put(sheet.getRow(r).getCell(c).getStringCellValue(),sheet.getRow(r).getCell(c).getStringCellValue());
 			}
 		}
 		//By using for each loop
