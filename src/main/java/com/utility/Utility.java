@@ -26,7 +26,7 @@ public class Utility extends BaseClass {
 		return sheet;
 	}
 	
-	public void getSingleData(Sheet sheet,int rowNum,int cellNum)
+	public static void getSingleData(int cellNum,int rowNum,Sheet sheet)
 	{
 		if(sheet.getRow(rowNum).getCell(cellNum).getCellType().toString().equalsIgnoreCase("String"))
 		{
