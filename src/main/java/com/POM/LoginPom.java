@@ -31,13 +31,26 @@ public class LoginPom extends BaseClass {
 	public String getUserName()
 	{
 		String uName=username.getText();
-		return uName.substring(uName.indexOf(':'),uName.length()-1);
+		return uName.substring(uName.indexOf('A'));
 		
 	}
 	public String getPass()
+	
 	{
+		
 		String pass=password.getText();
-		return pass.substring(pass.indexOf(':'));
+		String pass1=pass.replace(':', ' ');
+		String pass2= pass1.substring(pass1.indexOf(' '));
+		String pass3="";
+		for (int i=0;i<pass2.length();i++)
+		{
+			char c=pass2.charAt(i);
+			if(!Character.isWhitespace(c))
+			{
+				pass3+=c;
+			}
+		}
+		return pass3;
 	}
 	public void setUserN(String name)
 	{

@@ -27,11 +27,13 @@ public void tearDown()
 	driver.quit();
 }
 @Test
-public void loginTest()
+public void loginTest() throws InterruptedException
 {
 	lp=new LoginPom();
 	lp.setUserN(lp.getUserName());
 	lp.setPass(lp.getPass());
+	Thread.sleep(5000);
+
 	lp.click();
 	String Actual=driver.getCurrentUrl();
 	String Expected="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
