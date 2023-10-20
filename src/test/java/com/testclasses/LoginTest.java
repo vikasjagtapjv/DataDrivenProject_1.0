@@ -29,7 +29,7 @@ public void tearDown()
 @Test
 public void loginTest()
 {
-	LoginPom lp=new LoginPom();
+	lp=new LoginPom();
 	lp.setUserN(lp.getUserName());
 	lp.setPass(lp.getPass());
 	lp.click();
