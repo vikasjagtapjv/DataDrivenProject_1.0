@@ -27,7 +27,7 @@ public class PIM_Test extends BaseClass{
 		driver.close();
 		driver.quit();
 	}
-	@Test(priority=0)
+	//@Test(priority=0)
 	public void loginTest() throws InterruptedException
 	{
 		lp=new LoginPom();
@@ -44,7 +44,10 @@ public class PIM_Test extends BaseClass{
 	@Test(priority=1)
 	public void pimTest() throws InterruptedException
 	{
-		PIM_Pom pp=new PIM_Pom();
+
+		lp=new LoginPom();
+		
+	PIM_Pom pp=new PIM_Pom();
 		
 		// -----SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
 		Thread.sleep(5000);

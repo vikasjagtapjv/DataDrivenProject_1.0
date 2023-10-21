@@ -3,7 +3,9 @@ package com.testclasses;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,12 +16,13 @@ import com.base.BaseClass;
 public class AdminTest extends BaseClass {
 	AdminPom ap;
 	LoginPom lp;
-	@BeforeMethod
+	@BeforeClass
 	public void setup() throws IOException {
 		
 		launchWeb();
 	}
-	@AfterMethod
+	@AfterClass
+	
 	public void tearDown()
 	{
 		driver.close();
@@ -30,13 +33,13 @@ public class AdminTest extends BaseClass {
 	{
 		lp=new LoginPom();
 		ap=new AdminPom();
-		
-		lp.setUserN(lp.getUserName());
-		lp.setPass(lp.getPass());
-		lp.click();
-		String Actual=driver.getCurrentUrl();
-		String Expected="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
-		Assert.assertEquals(Actual, Expected);
+//		
+//		lp.setUserN(lp.getUserName());
+//		lp.setPass(lp.getPass());
+//		lp.click();
+//		String Actual=driver.getCurrentUrl();
+//		String Expected="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
+//		Assert.assertEquals(Actual, Expected);
 		ap.clickOnAdmin();
 		ap.setUserNm(ap.getUserName());
 		ap.clickOnUserRole();

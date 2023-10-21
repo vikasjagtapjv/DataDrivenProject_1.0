@@ -11,14 +11,14 @@ public class PIM_Pom  extends BaseClass {
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//a[@class='oxd-main-menu-item active']")
+	@FindBy(xpath="//span[text()='PIM']")
 	private WebElement clickPIM;
 	 
 	// -----SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
 	@FindBy(xpath="//div[contains(text(),'Virat')]")
 	private WebElement firstName;
 	
-	@FindBy(xpath="//div[@class='oxd-autocomplete-text-input oxd-autocomplete-text-input--focus']")private WebElement employeeNm ;
+	@FindBy(xpath="(//input[@placeholder='Type for hints...'])[1]")private WebElement employeeNm ;
 	
 	@FindBy(xpath="(//div[@role='listbox']//span)[1]")private WebElement employeeHint ;
 
