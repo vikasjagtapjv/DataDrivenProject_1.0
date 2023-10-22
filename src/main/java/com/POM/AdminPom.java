@@ -3,6 +3,7 @@ package com.POM;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -73,7 +74,7 @@ public class AdminPom extends BaseClass {
 			@FindBy(xpath="(//div[contains(@class,'oxd-select-text')]//div[text()='-- Select --'])[1]")
 			 private WebElement UserRole;
 			//select adminOption
-			@FindBy(xpath="//div[contains(text(),'Admin')]")
+			@FindBy(xpath="//div[@role='option']//span[text()='Admin']")
 			private WebElement adminOption;
 			//select ess
 			@FindBy(xpath="//div[contains(text(),'ESS')]")
@@ -186,7 +187,9 @@ public class AdminPom extends BaseClass {
 		}
 		public void userRole()
 		{
-			UserRole.click();
+			Actions act=new Actions(driver);
+			act.clickAndHold(UserRole);
+			
 		}
 		public void AdminSelect()
 		{
@@ -198,8 +201,9 @@ public class AdminPom extends BaseClass {
 		}
 		public void clickOnStatus()
 		{
-			status.click();
-
+			Actions act=new Actions(driver);
+			act.clickAndHold(status);
+			
 		}
 		public void getEnabled()
 		{
@@ -210,15 +214,21 @@ public class AdminPom extends BaseClass {
 			return disabled.getText();
 		}
 		public void enterEmployeeNameHint(String hintName)
+		
 		{
+			
 			employeeName.sendKeys(hintName);
+			implicitWait(hintName);
 		}
 		public void enterUserName(String UserN) {
 			userName.sendKeys(UserN);
+			implicitWait(UserN);
 		}
 		public void enterPassword(String pass)
 		{
 			Password.sendKeys(pass);
+			implicitWait(pass);
+
 		}
 		public void enterConfirmPassword(String confirmPass)
 		{
@@ -227,6 +237,8 @@ public class AdminPom extends BaseClass {
 		public void clickOnSaveButton()
 		{
 			clickOnSave.click();
+			
+			
 		}
 
 }

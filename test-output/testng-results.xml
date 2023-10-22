@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-22T19:13:23 IST" name="Default suite" finished-at="2023-10-22T19:14:19 IST" duration-ms="56091">
+  <suite started-at="2023-10-22T19:55:30 IST" name="Default suite" finished-at="2023-10-22T19:56:26 IST" duration-ms="56126">
     <groups>
     </groups>
-    <test started-at="2023-10-22T19:13:23 IST" name="Default test" finished-at="2023-10-22T19:14:19 IST" duration-ms="56091">
+    <test started-at="2023-10-22T19:55:30 IST" name="Default test" finished-at="2023-10-22T19:56:26 IST" duration-ms="56126">
       <class name="com.testclasses.AdminTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.testclasses.AdminTest@71a8adcf]" started-at="2023-10-22T19:13:23 IST" name="setup" finished-at="2023-10-22T19:14:00 IST" duration-ms="36805" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.testclasses.AdminTest@4310d43]" started-at="2023-10-22T19:55:30 IST" name="setup" finished-at="2023-10-22T19:56:14 IST" duration-ms="43714" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="adminTest()[pri:0, instance:com.testclasses.AdminTest@71a8adcf]" started-at="2023-10-22T19:14:00 IST" name="adminTest" finished-at="2023-10-22T19:14:17 IST" duration-ms="17061" status="FAIL">
+        <test-method signature="adminTest()[pri:0, instance:com.testclasses.AdminTest@4310d43]" started-at="2023-10-22T19:56:14 IST" name="adminTest" finished-at="2023-10-22T19:56:24 IST" duration-ms="9796" status="FAIL">
           <exception class="org.openqa.selenium.InvalidSelectorException">
             <message>
               <![CDATA[Compound class names not permitted
@@ -39,7 +39,7 @@ at org.openqa.selenium.support.PageFactory.proxyFields(PageFactory.java:109)
 at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:101)
 at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:88)
 at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:76)
-at com.POM.AdminPom.<init>(AdminPom.java:14)
+at com.POM.AdminPom.<init>(AdminPom.java:15)
 at com.POM.LoginPom.clickOnLogin(LoginPom.java:68)
 at com.testclasses.AdminTest.adminTest(AdminTest.java:36)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -76,7 +76,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- adminTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testclasses.AdminTest@71a8adcf]" started-at="2023-10-22T19:14:17 IST" name="tearDown" finished-at="2023-10-22T19:14:19 IST" duration-ms="2135" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testclasses.AdminTest@4310d43]" started-at="2023-10-22T19:56:24 IST" name="tearDown" finished-at="2023-10-22T19:56:26 IST" duration-ms="2540" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

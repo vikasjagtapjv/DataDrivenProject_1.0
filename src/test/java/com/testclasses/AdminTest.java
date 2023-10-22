@@ -32,7 +32,7 @@ public class AdminTest extends BaseClass {
 		
 		lp.setUserN(lp.getUserName());
 		lp.setPass(lp.getPass().trim());
-		Thread.sleep(3000);
+		
 		AdminPom ap=lp.clickOnLogin();
 		
 	    ap.clickOnAdmin();
