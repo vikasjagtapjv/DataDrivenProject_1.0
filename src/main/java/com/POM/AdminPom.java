@@ -104,7 +104,7 @@ public class AdminPom extends BaseClass {
 			 private WebElement clickOnSave;
 			
 			
-			//edit User-------------------
+			
 			
 			
 			//Action method for search user-----
@@ -188,22 +188,22 @@ public class AdminPom extends BaseClass {
 		{
 			UserRole.click();
 		}
-		public String getAdmin()
+		public void AdminSelect()
 		{
-			return adminOption.getText();
+			adminOption.click();
 		}
-		public String getEss()
+		public void Ess()
 		{
-			return ess.getText();
+			 ess.click();
 		}
 		public void clickOnStatus()
 		{
 			status.click();
 
 		}
-		public String getEnabled()
+		public void getEnabled()
 		{
-			return enabled.getText();
+			enabled.click();
 		}
 		public String getdisbled()
 		{

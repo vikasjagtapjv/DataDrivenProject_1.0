@@ -21,7 +21,7 @@ public class LoginPom extends BaseClass {
 	
 	@FindBy(xpath="//input[@name='password']")
 	 private WebElement Pass;
-	@FindBy(xpath="//button[text()=' Login ']")
+	@FindBy(xpath="//button[@type='submit']")
 	 private WebElement button;
 	
 	@FindBy(xpath="//p[text()='Forgot Your Password? ']")
@@ -54,17 +54,18 @@ public class LoginPom extends BaseClass {
 	}
 	public void setUserN(String name)
 	{
-		Name.clear();
+		
 		Name.sendKeys(name);
 	}
 	public void setPass(String password)
 	{
-		Pass.clear();
-		Pass.sendKeys(password);
+		
+		Pass.sendKeys(password.trim());
 	}
-	public void click()
+	public AdminPom clickOnLogin()
 	{
 		button.click();
+		return new AdminPom();
 	}
 
 }

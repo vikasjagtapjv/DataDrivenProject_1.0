@@ -6,6 +6,8 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.utility.Utility;
 
@@ -17,7 +19,7 @@ public class BaseClass {
 	public void launchWeb() throws IOException
 	{
 		fis=new FileInputStream(projectPath+"\\src\\main\\resources\\Property\\config.properties");
-		driver=new ChromeDriver();
+		driver=new FirefoxDriver();
 		driver.manage().window().maximize();
 		Properties pro=new Properties();
 		
@@ -27,7 +29,7 @@ public class BaseClass {
 		
 			
 	     driver.get(pro.getProperty("WebUrl"));
-	    Utility.implicitWait();
+	    Utility.implicitWait(); 
 		 
 		
 	}

@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.POM.LoginPom;
 import com.base.BaseClass;
+import com.myexception.UserNotFoundException;
 import com.utility.Utility;
 
 public class LoginTest extends BaseClass{
@@ -34,8 +35,14 @@ public void loginTest() throws InterruptedException
 	lp.setPass(lp.getPass());
 	Thread.sleep(5000);
 
-	lp.click();
+	lp.clickOnLogin();
 	String Actual=driver.getCurrentUrl();
+	try {
+	 throw new UserNotFoundException();
+	}
+	catch(Exception e) {
+		e.printStackTrace();
+	}
 	String Expected="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
 	Assert.assertEquals(Actual, Expected);
 }
@@ -53,7 +60,7 @@ public void testUser() throws EncryptedDocumentException, IOException, Interrupt
 	lp.setPass(value);
 	Thread.sleep(5000);
 	Utility.implicitWait();
-	lp.click();
+	lp.clickOnLogin();
 	Thread.sleep(5000);
 }
 public void getDataFromExcel() throws EncryptedDocumentException, IOException

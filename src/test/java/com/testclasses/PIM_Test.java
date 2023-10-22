@@ -30,12 +30,7 @@ public class PIM_Test extends BaseClass{
 	//@Test(priority=0)
 	public void loginTest() throws InterruptedException
 	{
-		lp=new LoginPom();
-		lp.setUserN(lp.getUserName());
-		Thread.sleep(5000);
-		lp.setPass(lp.getPass());
-		Thread.sleep(5000);
-		lp.click();
+		
 		Thread.sleep(5000);
 		String Actual=driver.getCurrentUrl();
 		String Expected="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
@@ -49,6 +44,12 @@ public class PIM_Test extends BaseClass{
 		
 	PIM_Pom pp=new PIM_Pom();
 		
+	lp=new LoginPom();
+	lp.setUserN(lp.getUserName());
+	Thread.sleep(5000);
+	lp.setPass(lp.getPass());
+	Thread.sleep(5000);
+	lp.clickOnLogin();
 		// -----SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
 		Thread.sleep(5000);
 		pp.click_OnPim();
