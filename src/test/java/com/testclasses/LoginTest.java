@@ -33,7 +33,7 @@ public void loginTest() throws InterruptedException
 	lp=new LoginPom();
 	lp.setUserN(lp.getUserName());
 	lp.setPass(lp.getPass());
-	Thread.sleep(5000);
+	
 
 	lp.clickOnLogin();
 	String Actual=driver.getCurrentUrl();
@@ -54,14 +54,14 @@ public void testUser() throws EncryptedDocumentException, IOException, Interrupt
 	getDataFromExcel();
 	String key= (String)utility.getSingleData(1, 0, sh);
 	String value=(String) utility.getSingleData(1, 1, sh);
-	Thread.sleep(5000);
+	
 
 	lp.setUserN(key);
 	lp.setPass(value);
-	Thread.sleep(5000);
+	
 	Utility.implicitWait();
 	lp.clickOnLogin();
-	Thread.sleep(5000);
+	
 }
 public void getDataFromExcel() throws EncryptedDocumentException, IOException
 {

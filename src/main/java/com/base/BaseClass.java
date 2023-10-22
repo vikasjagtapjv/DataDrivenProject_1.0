@@ -37,7 +37,7 @@ public class BaseClass {
 		 
 		
 	}
-	public void implicitWait(String ele)
+	public void explicitWait(String ele)
 	{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ele)));

@@ -218,16 +218,16 @@ public class AdminPom extends BaseClass {
 		{
 			
 			employeeName.sendKeys(hintName);
-			implicitWait(hintName);
+			explicitWait(hintName);
 		}
 		public void enterUserName(String UserN) {
 			userName.sendKeys(UserN);
-			implicitWait(UserN);
+			explicitWait(UserN);
 		}
 		public void enterPassword(String pass)
 		{
 			Password.sendKeys(pass);
-			implicitWait(pass);
+			explicitWait(pass);
 
 		}
 		public void enterConfirmPassword(String confirmPass)

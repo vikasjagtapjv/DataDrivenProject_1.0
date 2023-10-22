@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 
 import com.POM.AdminPom;
 import com.POM.LoginPom;
+import com.POM.PIM_Pom;
 import com.base.BaseClass;
 
 public class AdminTest extends BaseClass {
@@ -60,5 +61,42 @@ public class AdminTest extends BaseClass {
 		
 		
 	}
+	@Test(priority=1)
+	public void pimTest() throws InterruptedException
+	{
+
+		LoginPom lp=new LoginPom();
+		
+	PIM_Pom pp=new PIM_Pom();
+		
+	lp=new LoginPom();
+	lp.setUserN(lp.getUserName());
+
+	lp.setPass(lp.getPass());
+	lp.clickOnLogin();
+		// -----SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
+		pp.click_OnPim();
+		pp.setEmployeeNm(pp.getEmployeeNm());
+		pp.clickOnEmp();
+		pp.setEmpID(pp.getEmpID());
+		pp.clickOn_Save();
+		
+		//--ADD EMPLOYEE----------------------//
+		pp.click_On_addEmp();
+		pp.setEmployeefn("scott");
+		pp.setEmployeeMN("edword");
+		pp.setEmployeeLN("decort");
+		pp.setEmployeeID("0698");
+		pp.clickOnSave();
+		
+		//---REPORTS--------------
+		pp.enterOnReport();
+		pp.setReportName(pp.getReportName());
+		pp.enterOnHint();
+		pp.click_On_Search();
+		pp.clickON_Report();
+		
+		}
+
 
 }
