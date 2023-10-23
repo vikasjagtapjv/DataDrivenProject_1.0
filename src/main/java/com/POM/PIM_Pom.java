@@ -1,6 +1,9 @@
 package com.POM;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -10,98 +13,217 @@ public class PIM_Pom  extends BaseClass {
 	{
 		PageFactory.initElements(driver,this);
 	}
-	
+
 	@FindBy(xpath="//span[text()='PIM']")
 	private WebElement clickPIM;
-	 
-	// -----SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
-	@FindBy(xpath="//div[contains(text(),'Virat')]")
-	private WebElement firstName;
-	
-	@FindBy(xpath="(//input[@placeholder='Type for hints...'])[1]")private WebElement employeeNm ;
-	
-	@FindBy(xpath="(//div[@role='listbox']//span)[1]")private WebElement employeeHint ;
 
-	@FindBy(xpath="//div[text()='0249']")private WebElement getempId ;
+	// -----SEARCH EMPLOYEE-------//
 
-	@FindBy(xpath="(//div//input[@class='oxd-input oxd-input--active'])[2]")private WebElement id ;
+	@FindBy(xpath="(//input[contains(@placeholder,'Type')])[1]")private WebElement employeeNm;
+	@FindBy(xpath="//div[contains(@class,'oxd-autocomplete-o')]")
+	private WebElement hint;
 
-	@FindBy(xpath="(//button[@type='submit'])")private WebElement button_Save;
+	@FindBy(xpath="(//input[contains(@class,'oxd-input oxd-input--active')])[2]")private WebElement empId;
 
-	
+	@FindBy(xpath="(//div[contains(text(),'Select')])[1]")
+	private WebElement employmentStatus;
+	@FindBy(xpath="(//div[contains(@role,'option')])")
+	private List<WebElement>listOfStatus;
+	@FindBy(xpath="//div[contains(text(),'Current Employees Only')]")
+	private WebElement include;
+	@FindBy(xpath="//div[contains(@role,'option')]")
+	private List<WebElement>list_Of_Include;
+	@FindBy(xpath="(//input[contains(@placeholder,'Type for hints')])[2]")
+	private WebElement supervisorNm;
+	@FindBy(xpath="//div[contains(@class,'oxd-autocomplete-o')]")
+	private WebElement supervisorNmHint;
+	@FindBy(xpath="(//div[contains(@class,'oxd-select-text-i')])[3]")
+	private WebElement jobTitle;
+	@FindBy(xpath="//div[contains(@role,'option')]")
+	private List<WebElement>list_Of_jobTitle;
+	@FindBy(xpath="(//div[contains(text(),'Select')])[3]")
+	private WebElement subUnit;
+	@FindBy(xpath="//div[contains(@role,'option')]")
+	private List<WebElement>list_Of_subUnit;
+	@FindBy(xpath="//button[contains(@type,'submit')]")
+	private WebElement button_Save;
+
+
 	//---------ADD EMPLOYEE----------------------//
+	@FindBy(xpath="(//button[contains(@class,'oxd-button ')])[3]")
+	private WebElement addEmp;
 
-	@FindBy(xpath="//li//a[text()='Add Employee']")private WebElement addEmp ;
+	@FindBy(xpath="//input[contains(@name,'firstName')]")private WebElement firstNm;
 
-	@FindBy(xpath="//input[@name='firstName']")private WebElement firstNm ;
+	@FindBy(xpath="//input[contains(@name,'middleName')]")private WebElement mddleNm;
 
-	@FindBy(xpath="//input[@name='middleName']")private WebElement mddleNm;
+	@FindBy(xpath="//input[contains(@name,'lastName')]")private WebElement lastNm;
 
-	@FindBy(xpath="//input[@name='lastName']")private WebElement lastNm ;
+	@FindBy(xpath="(//input[contains(@class,'oxd-inp')])[5]")private WebElement e_Id;
 
-	@FindBy(xpath="(//input[@class='oxd-input oxd-input--active'])[2]")private WebElement e_Id ;
+	@FindBy(xpath="//button[contains(@type,'submit')]")private WebElement Click_save;
 
-	@FindBy(xpath="//button[text()=' Save ']")private WebElement Click_save ;
-	
 	//-----------REPORTS------------------------//
 
-	@FindBy(xpath="//li//a[text()='Reports']")private WebElement  Reports;
+	@FindBy(xpath="//li//a[contains(text(),'Reports')]")private WebElement Reports;
 
-	@FindBy(xpath="//div[text()='PIM Sample Report']")private WebElement getReportNm;
+	@FindBy(xpath="//input[contains(@placeholder,'Type for hint')]")private WebElement ReportNm;
 
-	@FindBy(xpath="//input[@placeholder='Type for hints...']")private WebElement report_Nm ;
-	 
-	@FindBy(xpath="//div//div[@role='option']//span")private WebElement hint_name;
+
+	@FindBy(xpath="//div[contains(@class,'oxd-autocomplete-o')]")private WebElement hint_name;
+
+	@FindBy(xpath="//button[contains(text(),'Search')]")private WebElement search;
+
+	@FindBy(xpath="//button[@type='button']//i[@class='oxd-icon bi-file-text-fill']")private WebElement select_report_file;
 	
-	@FindBy(xpath="//button[text()=' Search ']")private WebElement search;
-	
-	@FindBy(xpath="//button[@type='button']//i[@class='oxd-icon bi-file-text-fill']")private WebElement select_report_file ;
-//	@FindBy(xpath="")private WebElement ;
-//	@FindBy(xpath="")private WebElement ;
-	
-	
-	// ---- ACTION METHOD OF -SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
+
+
+	// ---- ACTION METHOD OF -SEARCH EMPLOYEE-------//
 	
 	public void click_OnPim()
 	{
 		clickPIM.click();
 	}
-	
-	
-	public String getEmployeeNm()
-	{
-		return firstName.getText();
-	}
-	public void setEmployeeNm(String nm)
-	{
-		employeeNm.sendKeys(nm);
-		
-	}
-	public void clickOnEmp()
-	{
-		employeeHint.click();
-	}
 
-	public String getEmpID()
+
+	public void enterEmployeeNm(String nm)
 	{
-		return getempId.getText();
+		//employeeNm.sendKeys(nm);
+		Actions act=new Actions(driver);
+		act.clickAndHold(employeeNm).sendKeys(nm).perform();
+		act.moveToElement(hint).click().perform();
+
 	}
 	public void setEmpID(String Id)
 	{
-		id.sendKeys(Id);
+		empId.sendKeys(Id);
 	}
+	public void setEmpStatus() {
+		Actions act=new Actions(driver);
+		act.clickAndHold(employmentStatus).build().perform();
+	}
+	public void listOfStatus()
+	{
+		for(WebElement ele:listOfStatus)
+		{
+			if(ele.getText().equals("Freelance")||ele.getText().equals("Full-Time Contract"))
+			{
+				ele.click();
+				break;
+			}
+			else
+			{
+				if(ele.getText().equalsIgnoreCase("Full-Time Permanent"))
+				{
+					ele.click();
+					break;
+				}
+			}
+
+
+		}
+	}
+	public void includeEmp()
+	{
+		Actions act=new Actions(driver);
+		act.clickAndHold(include).perform();
+	}
+	public void includeEmpList()
+	{
+		for(WebElement ele:list_Of_Include)
+		{
+			if(ele.getText().equals("Current and Past Employees")||ele.getText().equals("Current Employees Only"))
+			{
+				ele.click();
+				break;
+			}
+			else
+			{
+				if(ele.getText().equalsIgnoreCase("Past Employees Only"))
+				{
+					ele.click();
+					break;
+				}
+			}
+
+
+		}
+		
+	}
+	
+public void enterSupName(String supNm)
+{
+	Actions act=new Actions(driver);
+	act.clickAndHold(supervisorNm).sendKeys(supNm).perform();
+	act.moveToElement(supervisorNmHint).click().perform();
+}
+public void job_Title() {
+	Actions act=new Actions(driver);
+	act.clickAndHold(jobTitle).perform();
+	
+}
+public void enterJobTitle()
+{
+	for(WebElement ele:list_Of_jobTitle)
+	{
+		if(ele.getText().equals("QA Engineer")||ele.getText().equals("QA Lead"))
+		{
+			ele.click();
+			break;
+		}
+		else
+		{
+			if(ele.getText().equalsIgnoreCase("Software Engineer"))
+			{
+				ele.click();
+				break;
+			}
+		}
+
+
+	}
+}
+public void sub_unit()
+{
+	Actions act=new Actions(driver);
+	act.clickAndHold(subUnit).perform();
+}
+public void enterSubUnit()
+{
+	for(WebElement ele:list_Of_subUnit)
+	{
+		if(ele.getText().equals("Engineering"))
+		{
+			ele.click();
+			break;
+		}
+		else
+		{
+			if(ele.getText().equalsIgnoreCase("Quality Assurance"))
+			{
+				ele.click();
+				break;
+			}
+		}
+
+
+	}
+}
+	
+	
 	public void clickOn_Save()
 	{
 		button_Save.click();
 	}
-	
-	
+
+
 	//-------ACTION METHODS OF--ADD EMPLOYEE----------------------//
+	
 	public void click_On_addEmp()
 	{
 		addEmp.click();
 	}
-	
+
 	public void setEmployeefn(String eFNm)
 	{
 		firstNm.sendKeys(eFNm);
@@ -110,7 +232,7 @@ public class PIM_Pom  extends BaseClass {
 	{
 		mddleNm.sendKeys(eMNm);
 	}
-	
+
 	public void setEmployeeLN(String eLNm)
 	{
 		lastNm.sendKeys(eLNm);
@@ -122,24 +244,23 @@ public class PIM_Pom  extends BaseClass {
 	public void clickOnSave() {
 		Click_save.click();
 	}
-	
+
 	//-ACTION METHOD-OF---------REPORTS------------------------//
+	
 
 	public void enterOnReport()
 	{
 		Reports.click();
-		}
-	public String getReportName()
+	}
+	
+	public void enterReportName(String RName)
 	{
-		return getReportNm.getText();
+		//ReportNm.sendKeys(RName);
+		Actions act=new Actions(driver);
+		act.clickAndHold(ReportNm).sendKeys(ReportNm).perform();
+		act.moveToElement(hint_name).click().perform();
 	}
-	public void setReportName(String RName)
-	{
-		report_Nm.sendKeys(RName);
-	}
-	public void enterOnHint() {
-		hint_name.click();
-	}
+	
 	public void click_On_Search() {
 		search.click();
 	}

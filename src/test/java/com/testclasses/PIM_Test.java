@@ -14,7 +14,6 @@ import com.POM.PIM_Pom;
 import com.base.BaseClass;
 
 public class PIM_Test extends BaseClass{
-	LoginPom lp;
 	@BeforeClass
 	public void setup() throws IOException {
 		
@@ -24,53 +23,42 @@ public class PIM_Test extends BaseClass{
 	
 	public void tearDown()
 	{
-		driver.close();
 		driver.quit();
 	}
-	//@Test(priority=0)
-	public void loginTest() throws InterruptedException
-	{
-		
-		
-		String Actual=driver.getCurrentUrl();
-		String Expected="https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
-		Assert.assertEquals(Actual, Expected);
-	}
-	@Test(priority=1)
-	public void pimTest() throws InterruptedException
-	{
 
-		lp=new LoginPom();
-		
-	PIM_Pom pp=new PIM_Pom();
-		
-	lp=new LoginPom();
-	lp.setUserN(lp.getUserName());
+	@Test
+	public void pimTest()
+	{
+		LoginPom lp=new LoginPom();
 
-	lp.setPass(lp.getPass());
-	lp.clickOnLogin();
-		// -----SEARCH EMPLOYEE WITH AVAILABLE INFORMATION -------//
+		lp.setUserN(lp.getUserName());
+		lp.setPass(lp.getPass().trim());
+		lp.clickOnLogin();
+		PIM_Pom pp=new PIM_Pom();
 		pp.click_OnPim();
-		pp.setEmployeeNm(pp.getEmployeeNm());
-		pp.clickOnEmp();
-		pp.setEmpID(pp.getEmpID());
+		pp.enterEmployeeNm("virat");
+		pp.setEmpID("0249");
+		pp.setEmpStatus();
+		pp.listOfStatus();
+		pp.includeEmp();
+		pp.includeEmpList();
+		pp.enterSupName("virat");
+		pp.job_Title();
+		pp.enterJobTitle();
+		pp.sub_unit();
+		pp.enterSubUnit();
 		pp.clickOn_Save();
-		
-		//--ADD EMPLOYEE----------------------//
 		pp.click_On_addEmp();
-		pp.setEmployeefn("scott");
-		pp.setEmployeeMN("edword");
-		pp.setEmployeeLN("decort");
-		pp.setEmployeeID("0698");
+		pp.setEmployeefn("Mat");
+		pp.setEmployeeMN("santer");
+		pp.setEmployeeLN("john");
+		pp.setEmpID("0268");
 		pp.clickOnSave();
-		
-		//---REPORTS--------------
 		pp.enterOnReport();
-		pp.setReportName(pp.getReportName());
-		pp.enterOnHint();
+		pp.enterReportName("PIM Sample Report");
 		pp.click_On_Search();
 		pp.clickON_Report();
-		
-		}
+	}
+
 
 }

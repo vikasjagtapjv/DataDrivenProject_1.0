@@ -56,10 +56,11 @@ public class AdminTest extends BaseClass {
 		ap.enterConfirmPassword("admin1234");
 		ap.clickOnSaveButton();
 
+	
 
 
 	}
-
+	
 
 
 }
