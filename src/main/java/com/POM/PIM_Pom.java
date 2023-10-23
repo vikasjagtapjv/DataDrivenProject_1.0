@@ -45,7 +45,7 @@ public class PIM_Pom  extends BaseClass {
 	private WebElement subUnit;
 	@FindBy(xpath="//div[contains(@role,'option')]")
 	private List<WebElement>list_Of_subUnit;
-	@FindBy(xpath="//button[contains(@type,'submit')]")
+	@FindBy(xpath="(//button[contains(@class,'oxd-button oxd-button--medium oxd-button--seconda')])[1]")
 	private WebElement button_Save;
 
 
