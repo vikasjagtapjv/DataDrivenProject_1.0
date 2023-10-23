@@ -62,10 +62,14 @@ public class LoginPom extends BaseClass {
 		
 		Pass.sendKeys(password.trim());
 	}
-	public AdminPom clickOnLogin()
+//	public AdminPom clickOnLogin()
+//	{
+//		button.click();
+//		return new AdminPom();
+//	}
+	public void clickOnLogin()
 	{
 		button.click();
-		return new AdminPom();
 	}
 
 }

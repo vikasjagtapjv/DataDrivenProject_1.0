@@ -33,27 +33,25 @@ public class AdminTest extends BaseClass {
 
 		lp.setUserN(lp.getUserName());
 		lp.setPass(lp.getPass().trim());
+		lp.clickOnLogin();
 
-		AdminPom ap=lp.clickOnLogin();
-
+		AdminPom ap=new AdminPom();
 		ap.clickOnAdmin();
-		ap.setUserNm(ap.getUserName());
+		ap.setUserNm("Virat");
 		ap.clickOnUserRole();
-		ap.click_On_Admin();
-		ap.setEmployeeName(ap.getEmployeeName());
+		ap.usersRoles();
+		ap.enterEmployeeName("Virat");
 		ap.setStatus();
-		ap.click_On_Enabled();
+		ap.clickUsersStatus();
 		ap.clickOnSearch();
-		ap.clickOnEdit();
-		ap.reset();
 		//add user
 		ap.clickOnAddUsers();
 		ap.userRole();
-		ap.AdminSelect();
+		ap.usersAddRoles();
 		ap.clickOnStatus();
-		ap.getEnabled();
-		ap.enterEmployeeNameHint("Viraj");
-		ap.enterUserName("VirajJ");
+		ap.addUsersStatus();
+		ap.addEmployeeName("Kohli");
+		ap.enterUserName("Ronaldo");
 		ap.enterPassword("admin1234");
 		ap.enterConfirmPassword("admin1234");
 		ap.clickOnSaveButton();

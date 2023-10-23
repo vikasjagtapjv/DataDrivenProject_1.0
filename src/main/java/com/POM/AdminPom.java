@@ -1,5 +1,7 @@
 package com.POM;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -13,145 +15,163 @@ public class AdminPom extends BaseClass {
 	}
 
 	//click on admin
-	@FindBy(xpath="//a[@class='oxd-main-menu-item active']")
+	@FindBy(xpath="(//span[contains(@class,'oxd-text')])[1]")
 	private WebElement admin;
 
+	//------------------------SEARCH USER------------------------
 
-	@FindBy(xpath="(//div[@class='oxd-table-cell oxd-padding-cell']//div)[3]")
+	@FindBy(xpath="(//input[contains(@class,'oxd-input')])[2]")
 	private WebElement searchUserName;
 
-	@FindBy(xpath="(//input[@class='oxd-input oxd-input--active'])[2]")
-	private WebElement enterUserName;
+	@FindBy(xpath="(//div[contains(text(),'Select')])[1]")
+	private WebElement searchUserRole;
 
-	@FindBy(xpath="(//div[contains(text(),'-- Select --')])[1]")
-	private WebElement searchUserRoll;
+	@FindBy(xpath="(//div[contains(@role,'option')])")
+	private List<WebElement>userRoles;
 
-	@FindBy(xpath="(//div[@class='oxd-select-option']//span)[1]")
-	private WebElement selectAdmin;
-	@FindBy(xpath="(//div[@class='oxd-select-option']//span)[2]")
-	private WebElement selectEss;
-
-	@FindBy(xpath="(//div[@class='oxd-table-cell oxd-padding-cell'])[4]")
+	@FindBy(xpath="//input[contains(@placeholder,'Type')]")
 	private WebElement eName;
-	@FindBy(xpath="//input[@placeholder='Type for hints...']")
-	private WebElement EmployeeName;
-	@FindBy(xpath="(//div[@class='oxd-autocomplete-dropdown --positon-bottom'])[1]")
-	private WebElement dropdownHint;
 
-	@FindBy(xpath="//div[contains(text(),'-- Select --')]")
+	@FindBy(xpath="//div[contains(@class,'oxd-autocomplete-o')]")
+	private WebElement hint;
+
+	@FindBy(xpath="(//div[contains(@class,'oxd-select-text-input')])[2]")
 	private WebElement selectStatus;
 
-	@FindBy(xpath="(//div[@class='oxd-select-option']//span)[3]")
-	private WebElement selectEnabled;
-	@FindBy(xpath="(//div[@class='oxd-select-option']//span)[4]")
-	private WebElement selectDisabled;
-	@FindBy(xpath="//button[@type='submit']")
+	@FindBy(xpath="(//div[contains(@role,'option')])")
+	private List<WebElement>userStatus;
+
+	@FindBy(xpath="//button[contains(@type,'submit')]")
 	private WebElement search;
 
-	@FindBy(xpath="//i[@class='oxd-icon bi-pencil-fill']")
-	private WebElement editUser;
-
-	@FindBy(className="oxd-button oxd-button--medium oxd-button--ghost")
+	@FindBy(xpath="//button[contains(@type,'submit')]")
 	private WebElement reset;
 
-	@FindBy(xpath="//button[ text()=' Add ']")
+
+	//__________---------Add User---------------
+
+	//click on add user
+	@FindBy(xpath="(//button[contains(@class,'oxd-button ')])[3]")
 	private WebElement add;
 	//user role
-	@FindBy(xpath="(//div[contains(@class,'oxd-select-text')]//div[text()='-- Select --'])[1]")
+	@FindBy(xpath="(//div[contains(text(),'Select')])[1]")
 	private WebElement UserRole;
-	//select adminOption
-	@FindBy(xpath="//div[@role='option']//span[text()='Admin']")
-	private WebElement adminOption;
-	//select ess
-	@FindBy(xpath="//div[contains(text(),'ESS')]")
-	private WebElement ess;
+	@FindBy(xpath="//div[contains(@role,'option')]")
+	private List<WebElement>addUserRoles;
 	//enter status
-	@FindBy(xpath="(//div[contains(@class,'oxd-select-text')]//div[text()='-- Select --'])[2]")
-	private WebElement status;
-	//select enabled
-	@FindBy(xpath="//div[contains(@class,'oxd-select-text')]//div[text()='Enabled']")
-	private WebElement enabled;
-	//select disabled
-	@FindBy(xpath="//div[contains(@class,'oxd-select-text')]//div[text()='Disabled']")
-	private WebElement disabled;
-	//enter eName
-	@FindBy(xpath="//input[@placeholder='Type for hints...']")
-	private WebElement employeeName;
+	@FindBy(xpath="(//div[contains(@class,'oxd-select-text-input')])[2]")
+	private WebElement selectAddUserStatus;
+
+	@FindBy(xpath="(//div[contains(@role,'option')])")
+	private List<WebElement>userAddStatus;
+	@FindBy(xpath="//input[contains(@placeholder,'Type')]")
+	private WebElement eAddName;
+
+	@FindBy(xpath="//div[contains(@class,'oxd-autocomplete-o')]")
+	private WebElement addHint;
 	//select userName
-	@FindBy(xpath="//div[@class='oxd-form-row']//div[@class='oxd-grid-2 orangehrm-full-width-grid']//div[@class='oxd-grid-item oxd-grid-item--gutters']//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@class='oxd-input oxd-input--active']")
-	private WebElement userName;
+	@FindBy(xpath="(//input[contains(@class,'oxd-input')])[2]")
+	private WebElement addUserName;
 	//enter password
-	@FindBy(xpath="(//input[@type='password'])[1]")
+	@FindBy(xpath="(//input[contains(@type,'password')])[1]")
 	private WebElement Password;
 	//confirm password
+	@FindBy(xpath="(//input[contains(@type,'password')])[2]")
+	private WebElement confirmPassword ;
+	@FindBy(xpath="//button[contains(@type,'submit')]")
+	private WebElement addSave;
 
-	@FindBy(xpath="(//input[@type='password'])[2]")
-	private WebElement confirmPassword;
-	@FindBy(xpath="//button[normalize-space()='Save']")
-	private WebElement clickOnSave;
+
+
 	//Action method for search user-----
-	public void clickOnAdmin ()
+	public void clickOnAdmin()
 	{
 		admin.click();
 	}
-	public String getUserName() {
-		return searchUserName.getText();
+
+
+	public void setUserNm(String sUName)
+	{
+		searchUserName.sendKeys(sUName);
+
 	}
 
-	public void setUserNm(String sUName) {
-		enterUserName.sendKeys(sUName);
 
-	}
-	//			public String getUserRole()
-	//			{
-	//				return textEss.getText();
-	//			}
 	public void clickOnUserRole()
 	{
-		searchUserRoll.click();	
-	}
-	public void click_On_Admin() {
+		//searchUserRole.click();
+		Actions act=new Actions(driver);
+		act.clickAndHold(searchUserRole).build().perform();
 
-		selectAdmin.click();
 	}
-	public void click_On_Ess() {
-		selectEss.click();
-	}
-
-	public String getEmployeeName()
+	public void usersRoles()
 	{
-		return eName.getText();
-	}
-	public void setEmployeeName(String EName)
-	{
-		EmployeeName.sendKeys(EName);
+		for(WebElement ele:userStatus)
+		{
+			if(ele.getText().equals("Admin"))
+			{
+				ele.click();
+				break;
+			}
+			else
+			{
+				if(ele.getText().equalsIgnoreCase("ESS"))
+				{
+					ele.click();
+					break;
+				}
+			}
+
+
+		}
+
 	}
 
-	//			public String getStatus()
-	//			{
-	//				return sEnabled.getText();
-	//			}
+	public void enterEmployeeName(String EName)
+	{
+		Actions act=new Actions(driver);
+		act.clickAndHold(eName).sendKeys(EName).perform();
+		act.moveToElement(hint).click().perform();
+		//act.click(hint).perform();
+	}
+
 	public void setStatus()
 	{
-		selectStatus.click();
+		//selectStatus.click();
+		Actions act=new Actions(driver);
+		act.clickAndHold(selectStatus).perform();
+
 	}
 
-	public void click_On_Enabled()
+	public void clickUsersStatus()
 	{
-		selectEnabled.click();
+		for(WebElement ele:userRoles)
+		{
+			if(ele.getText().equals("Enabled"))
+			{
+				ele.click();
+				break;
+			}
+			else
+			{
+				if(ele.getText().equalsIgnoreCase("Disabled"))
+				{
+					ele.click();
+					break;
+				}
+			}
+
+
+		}
+
+
 	}
-	public void click_On_Disabled()
-	{
-		selectDisabled.click();
-	}
+
 	public void clickOnSearch()
 	{
 		search.click();
 	}
-	public void clickOnEdit()
-	{
-		editUser.click();
-	}
+
 	public void reset() {
 		reset.click();
 
@@ -159,63 +179,98 @@ public class AdminPom extends BaseClass {
 	//Action method for add user
 
 
-	public void clickOnAddUsers() {
+	public void clickOnAddUsers(){
 		add.click();
 	}
 	public void userRole()
 	{
+		//UserRole.click();
 		Actions act=new Actions(driver);
-		act.clickAndHold(UserRole);
+		act.clickAndHold(UserRole).build().perform();
+	}
+	public void usersAddRoles()
+	{
+		for(WebElement ele:addUserRoles)
+		{
+			if(ele.getText().equals("Admin"))
+			{
+				ele.click();
+				break;
+			}
+			else
+			{
+				if(ele.getText().equalsIgnoreCase("ESS"))
+				{
+					ele.click();
+					break;
+				}
+			}
 
-	}
-	public void AdminSelect()
-	{
-		adminOption.click();
-	}
-	public void Ess()
-	{
-		ess.click();
+
+		}
+
 	}
 	public void clickOnStatus()
 	{
+		//selectAddUserStatus.click();
 		Actions act=new Actions(driver);
-		act.clickAndHold(status);
+		act.clickAndHold(selectAddUserStatus).perform();
 
 	}
-	public void getEnabled()
+	public void addUsersStatus()
 	{
-		enabled.click();
-	}
-	public String getdisbled()
-	{
-		return disabled.getText();
-	}
-	public void enterEmployeeNameHint(String hintName)
+		for(WebElement ele:userAddStatus)
+		{
+			if(ele.getText().equals("Enabled"))
+			{
+				ele.click();
+				break;
+			}
+			else
+			{
+				if(ele.getText().equalsIgnoreCase("Disabled"))
+				{
+					ele.click();
+					break;
+				}
+			}
 
-	{
 
-		employeeName.sendKeys(hintName);
-		explicitWait(hintName);
+		}
+
+
+	}
+
+	public void addEmployeeName(String hintName)
+	{
+		//eAddName.sendKeys(hintName);
+		Actions act=new Actions(driver);
+		act.clickAndHold(eAddName).sendKeys(hintName).perform();
+		act.moveToElement(addHint).click().perform();
 	}
 	public void enterUserName(String UserN) {
-		userName.sendKeys(UserN);
-		explicitWait(UserN);
+		addUserName.sendKeys(UserN);
 	}
+
 	public void enterPassword(String pass)
 	{
-		Password.sendKeys(pass);
-		explicitWait(pass);
-
+		//Password.sendKeys(pass);
+		Actions act=new Actions(driver);
+		act.clickAndHold(Password).sendKeys(pass).perform();
 	}
 	public void enterConfirmPassword(String confirmPass)
 	{
-		confirmPassword.sendKeys(confirmPass);
+		//confirmPassword.sendKeys(confirmPass);
+		Actions act=new Actions(driver);
+		act.clickAndHold(confirmPassword).sendKeys(confirmPass).perform();
 	}
+
 	public void clickOnSaveButton()
 	{
-		clickOnSave.click();
+		addSave.click();
+	} 
 
 
-	}
+
 
 }
