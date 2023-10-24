@@ -2,34 +2,34 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-23T22:15:49 IST" name="Default suite" finished-at="2023-10-23T22:17:02 IST" duration-ms="72913">
+  <suite started-at="2023-10-24T06:54:56 IST" name="Default suite" finished-at="2023-10-24T06:56:26 IST" duration-ms="89769">
     <groups>
     </groups>
-    <test started-at="2023-10-23T22:15:49 IST" name="Default test" finished-at="2023-10-23T22:17:02 IST" duration-ms="72913">
+    <test started-at="2023-10-24T06:54:56 IST" name="Default test" finished-at="2023-10-24T06:56:26 IST" duration-ms="89769">
       <class name="com.testclasses.PIM_Test">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.testclasses.PIM_Test@4310d43]" started-at="2023-10-23T22:15:50 IST" name="setup" finished-at="2023-10-23T22:16:40 IST" duration-ms="50909" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.testclasses.PIM_Test@4310d43]" started-at="2023-10-24T06:54:56 IST" name="setup" finished-at="2023-10-24T06:55:07 IST" duration-ms="10973" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="pimTest()[pri:0, instance:com.testclasses.PIM_Test@4310d43]" started-at="2023-10-23T22:16:41 IST" name="pimTest" finished-at="2023-10-23T22:17:02 IST" duration-ms="21206" status="FAIL">
+        <test-method signature="pimTest()[pri:0, instance:com.testclasses.PIM_Test@4310d43]" started-at="2023-10-24T06:55:07 IST" name="pimTest" finished-at="2023-10-24T06:56:25 IST" duration-ms="78285" status="FAIL">
           <exception class="org.openqa.selenium.json.JsonException">
             <message>
               <![CDATA[java.lang.reflect.InvocationTargetException
 Build info: version: '4.14.1', revision: '03f8ede370'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [392bb7b95f6e2af93079a51fe9c08d7a, actions {actions=[org.openqa.selenium.interactions.Sequence@deb3b60, org.openqa.selenium.interactions.Sequence@701a32]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Vikas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55669}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55669/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 392bb7b95f6e2af93079a51fe9c08d7a]]>
+Command: [daf894867e54091f43e7f8d2b9cb2c57, actions {actions=[org.openqa.selenium.interactions.Sequence@4690f583]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Vikas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51865}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51865/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: daf894867e54091f43e7f8d2b9cb2c57]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
 Build info: version: '4.14.1', revision: '03f8ede370'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [392bb7b95f6e2af93079a51fe9c08d7a, actions {actions=[org.openqa.selenium.interactions.Sequence@deb3b60, org.openqa.selenium.interactions.Sequence@701a32]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Vikas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55669}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55669/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 392bb7b95f6e2af93079a51fe9c08d7a
+Command: [daf894867e54091f43e7f8d2b9cb2c57, actions {actions=[org.openqa.selenium.interactions.Sequence@4690f583]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Vikas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51865}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51865/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: daf894867e54091f43e7f8d2b9cb2c57
 at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:520)
 at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:182)
 at org.openqa.selenium.json.JsonOutput.write0(JsonOutput.java:409)
@@ -62,8 +62,8 @@ at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
 at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:688)
 at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:605)
 at org.openqa.selenium.interactions.Actions.perform(Actions.java:574)
-at com.POM.PIM_Pom.enterEmployeeNm(PIM_Pom.java:93)
-at com.testclasses.PIM_Test.pimTest(PIM_Test.java:39)
+at com.POM.PIM_Pom.sub_unit(PIM_Pom.java:189)
+at com.testclasses.PIM_Test.pimTest(PIM_Test.java:48)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,12 +106,28 @@ at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Delegating
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:516)
 ... 61 more
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: (//input[contains(@placeholder,'Type')])[1]
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(text(),'Select')])[3]"}
+  (Session info: chrome=118.0.5993.89)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.14.1', revision: '03f8ede370'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.6'
-Driver info: driver.version: RemoteWebDriver
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [daf894867e54091f43e7f8d2b9cb2c57, findElement {using=xpath, value=(//div[contains(text(),'Select')])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\Vikas\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51865}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51865/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: daf894867e54091f43e7f8d2b9cb2c57
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
@@ -129,7 +145,7 @@ at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pimTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testclasses.PIM_Test@4310d43]" started-at="2023-10-23T22:17:02 IST" name="tearDown" finished-at="2023-10-23T22:17:02 IST" duration-ms="642" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.testclasses.PIM_Test@4310d43]" started-at="2023-10-24T06:56:25 IST" name="tearDown" finished-at="2023-10-24T06:56:26 IST" duration-ms="406" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
