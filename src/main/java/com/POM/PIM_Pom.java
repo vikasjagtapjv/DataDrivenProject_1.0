@@ -1,11 +1,14 @@
 package com.POM;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.base.BaseClass;
 
@@ -41,7 +44,7 @@ public class PIM_Pom  extends BaseClass {
 	private WebElement jobTitle;
 	@FindBy(xpath="//div[contains(@role,'option')]")
 	private List<WebElement>list_Of_jobTitle;
-	@FindBy(xpath="(//div[contains(text(),'Select')])[3]")
+	@FindBy(xpath="(//div[contains(@class,'oxd-select-text-input')])[4]")
 	private WebElement subUnit;
 	@FindBy(xpath="//div[contains(@role,'option')]")
 	private List<WebElement>list_Of_subUnit;
@@ -70,12 +73,13 @@ public class PIM_Pom  extends BaseClass {
 	@FindBy(xpath="//input[contains(@placeholder,'Type for hint')]")private WebElement ReportNm;
 
 
-	@FindBy(xpath="//div[contains(@class,'oxd-autocomplete-o')]")private WebElement hint_name;
+	@FindBy(xpath="//div/span[contains(text(),'PIM Sample Report')]")private WebElement hint_name;
 
-	@FindBy(xpath="//button[contains(text(),'Search')]")private WebElement search;
+	@FindBy(xpath="//button[contains(@class,'oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space')]")private WebElement search;
 
 	@FindBy(xpath="//button[@type='button']//i[@class='oxd-icon bi-file-text-fill']")private WebElement select_report_file;
-	
+	@FindBy(xpath="//p[contains(@class,'oxd-userdropdown-name')]")private WebElement clickUser;
+	@FindBy(xpath="//a[contains(text(),'Logout')]")private List<WebElement>logout;
 
 
 	// ---- ACTION METHOD OF -SEARCH EMPLOYEE-------//
@@ -106,7 +110,7 @@ public class PIM_Pom  extends BaseClass {
 	{
 		for(WebElement ele:listOfStatus)
 		{
-			if(ele.getText().equals("Freelance")||ele.getText().equals("Full-Time Contract"))
+			if(ele.getText().equals("Freelance"))
 			{
 				ele.click();
 				break;
@@ -132,7 +136,7 @@ public class PIM_Pom  extends BaseClass {
 	{
 		for(WebElement ele:list_Of_Include)
 		{
-			if(ele.getText().equals("Current and Past Employees")||ele.getText().equals("Current Employees Only"))
+			if(ele.getText().equals("Current and Past Employees"))
 			{
 				ele.click();
 				break;
@@ -166,7 +170,7 @@ public void enterJobTitle()
 {
 	for(WebElement ele:list_Of_jobTitle)
 	{
-		if(ele.getText().equals("QA Engineer")||ele.getText().equals("QA Lead"))
+		if(ele.getText().equals("QA Engineer"))
 		{
 			ele.click();
 			break;
@@ -257,7 +261,8 @@ public void enterSubUnit()
 	{
 		//ReportNm.sendKeys(RName);
 		Actions act=new Actions(driver);
-		act.clickAndHold(ReportNm).sendKeys(ReportNm).perform();
+		act.clickAndHold(ReportNm).sendKeys(RName).perform();
+		
 		act.moveToElement(hint_name).click().perform();
 	}
 	
@@ -268,5 +273,27 @@ public void enterSubUnit()
 	{
 		select_report_file.click();
 	}
+	public void click_forLogout()
+	{
+		//clickUser.click();
+		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOf(clickUser));
+		Actions act=new Actions(driver);
+		act.clickAndHold(clickUser);
+		
+	}
+	public void click_On_Logout()
+	{
+		for(WebElement ele:logout)
+		{
+			if(ele.getText().equals("Logout"))
+			{
+				ele.click();
+				break;
+			}
+			
+         }
+		
+		}
 
 }
